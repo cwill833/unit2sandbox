@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/portfolios/<%=one._id%>/stocks" method="POST">
+      <label for="name">Stock:</label>
+      <input type="text" name="name"><br>
+      <label for="oPrice">Opening Price:</label>
+      <input type="text" name="oPrice"><br>
+      <label for="yClose">Closing Price:</label>
+      <input type="text" name="yClose"><br>
+      <label for="volume">Volume:</label>
+      <input type="text" name="volume"><br>
+      <input type="submit" value="Submit">
+    
+    </form>
+    <a href="/portfolios">Back to all portfolios</a>
+  </body>
+</html>

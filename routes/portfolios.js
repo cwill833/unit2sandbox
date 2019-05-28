@@ -5,7 +5,6 @@ const Portfolio = require('../models/portfolio')
 router.get('/', (req, res)=>{
     Portfolio.find({})
     .then(portfolios=>{
-        console.log(portfolios)
         res.render('../views/show', {portfolios})
     })
 })
@@ -27,7 +26,6 @@ router.get('/:id/edit', (req,res)=>{
 router.put('/:id', (req, res)=>{
     Portfolio.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(one=>{
-        console.log(one)
         one.save()
         res.redirect('/portfolios')
     })

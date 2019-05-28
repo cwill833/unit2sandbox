@@ -11,9 +11,23 @@
         <li>Risk Tolerance: <%= one.risk %></li>
         <li>Initial investment: $<%= one.inv %></li>
         <li>Time Frame: <%= one.timeF %></li>
-        <li>Stock inside this portfolio</li>
+        <li>Stocks: 
+        <% if(one.stock.length) { %>
+          <ul>
+            <% one.stock.forEach((s, i) => { %>
+              <li><%=s.name %> </li>
+              <form action="/portfolios/<%= one._id %>/stocks/<%= s._id %>?_method=DELETE" method="POST">
+                <button type="submit">x</button>
+            </form>
+            <% }) %>
+          </ul>
+          <% } else { %>
+            <p>No stocks present</p>
+          <% } %>
+
     </ul>
     <a href="/portfolios/<%=one._id%>/edit">Edit</a>
+    <a href="/portfolios/<%=one._id%>/stocks/new">Add a stock</a>
     <form action="/portfolios/<%=one._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete Portfolio</button>
     </form>
