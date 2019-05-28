@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>Portfolio name: <%=one.name%></p>
+    <ul>
+        <li>Created Date: <%= new Intl.DateTimeFormat('en-US', {month: 'long'}).format(one.date)%> <%= one.date.getDate()%>, <%= one.date.getFullYear()%></li>
+        <li>Risk Tolerance: <%= one.risk %></li>
+        <li>Initial investment: $<%= one.inv %></li>
+        <li>Time Frame: <%= one.timeF %></li>
+        <li>Stock inside this portfolio</li>
+    </ul>
+    <a href="/portfolios/<%=one._id%>/edit">Edit</a>
+    <form action="/portfolios/<%=one._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete Portfolio</button>
+    </form>
+    <a href="/">Back to home</a>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>All created Portfolios</p>
+    <% if (portfolios.length > 0){ %>
+        <% portfolios.forEach( p => { %>
+        <ul>
+            <li>Created Date: <%= new Intl.DateTimeFormat('en-US', {month: 'long'}).format(p.date)%> <%= p.date.getDate()%>, <%= p.date.getFullYear()%></li>
+            <li>Portfolio Name: <%= p.name %></li>
+            <li>Risk Tolerance: <%= p.risk %></li>
+            <li>Initial investment: $<%= p.inv %></li>
+            <li>Time Frame: <%= p.timeF %></li>
+            <a href="/portfolios/<%= p._id %>">Details</a>
+            <br>
+        </ul>
+        <% }) %>
+    <% } else { %>
+        <p>Please create a portfolio to see them here</p>
+    <% } %>
+    <a href="/">Back to home</a>
+  </body>
+</html>

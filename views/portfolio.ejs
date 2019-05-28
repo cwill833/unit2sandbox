@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>This Portfolio was added</p>
+    <p>Name of portfolio: <%= item.name %></p>
+    <p>Risk Tolerance: <%= item.risk %></p>
+    <p>Initial Investment: <%= item.inv %></p>
+    <p>Time Frame: <%= item.timeF %></p>
+    <p>Created Date: <%= new Intl.DateTimeFormat('en-US', {month: 'long'}).format(item.date)%> <%= item.date.getDate()%>, <%= item.date.getFullYear()%></p>
+    <a href="/">Back</a>
+  </body>
+</html>

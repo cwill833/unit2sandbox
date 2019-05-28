@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>Edit Portfolio</p>
+    <form action="/portfolios/<%=one._id%>?_method=PUT" method="POST">
+        <input type="text" name="name" autocomplete="off" value="<%= one.name %>"><br>
+        <input type="text" name="risk" autocomplete="off" value="<%= one.risk %>"><br>
+        <input type="text" name="inv" autocomplete="off" value="<%= one.inv %>"><br>
+        <input type="text" name="timeF" autocomplete="off" value="<%= one.timeF%>"><br>
+        <button type="submit">Update Portfolio</button>
+    </form>
+    
+    <a href="/">Back to home</a>
+  </body>
+</html>
